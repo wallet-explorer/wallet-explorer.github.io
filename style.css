@@ -1,7 +1,7 @@
 @import 'src/fonts/font.css';
 
 :root {
-	--main-blue: #fc8b02;
+	--main-blue: #FF0035;
 	--main-radius: 8px;
 	--main-grey: #ffffff;
 	--light-blue: #0088CC;
@@ -91,7 +91,7 @@ ul, li {padding: 0;margin: 0;list-style: none;}
 	background-color: #101F3D;
 	border: outline;
 	border-style: outset;
-	border-color: #fc8b02;
+	border-color: #FF0035;
 	display: none;
 }
 
@@ -168,13 +168,13 @@ ul, li {padding: 0;margin: 0;list-style: none;}
 }
 
 #lol {
-	color: #fc8b02;
+	color: #FF0035;
 	text-decoration:none;
 
 }
 
 #lol1 {
-	color: #fc8b02;
+	color: #FF0035;
 	text-decoration:none;
 
 }
@@ -182,12 +182,12 @@ ul, li {padding: 0;margin: 0;list-style: none;}
 #kek {
 	text-decoration:none;
 	font-size: 15pt;	
-	color: #fc8b02;
+	color: #FF0035;
 }
 
 #kek1 {
 	text-decoration:none;
-	color: #fc8b02;
+	color: #FF0035;
 	font-size: 13pt;
 }
 
@@ -199,12 +199,12 @@ ul, li {padding: 0;margin: 0;list-style: none;}
 
 #keke {
 	text-decoration:none;
-	color: #fc8b02;
+	color: #FF0035;
 	font-size: 15pt;
 }
 
 .faq {
-	color: #fc8b02;
+	color: #FF0035;
 	text-decoration:none;
 	font-size: 16pt;
 	text-align: center;
