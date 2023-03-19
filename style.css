@@ -1,0 +1,593 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');
+
+
+html {
+	--main-blue: #232328;
+	--main-radius: 30px;
+	--main-grey: #ffffff;
+	--light-blue: #d0e7f3;
+	--dark-blue: #ffffff;
+	--body-color:#ffffff;
+	--trans-color: #f0f0f0;
+	--box-shadow: #7b7b7b;
+}
+
+html[data-theme='dark'] {
+	--main-blue: #F3F3F7;
+	--main-radius: 8px;
+	--main-grey: #232328;
+	--light-blue: #d0e7f3;
+	--dark-blue: #232328;
+	--body-color:#232328;
+	--trans-color: #2D2D32;
+    --color-headings: #2fbaff;
+	--box-shadow: #7b7b7b;
+}
+
+input[type=checkbox]{
+	height: 0;
+	width: 0;
+	visibility: hidden;
+}
+
+label {
+	margin-left: 1px;
+	margin-top: 8px;
+	cursor: pointer;
+	text-indent: -9999px;
+	width: 52px;
+	height: 27px;
+	background: grey;
+	float: right;
+	border-radius: 100px;
+	position: relative;
+}
+
+label:after {
+	content: '';
+	position: absolute;
+	top: 3px;
+	left: 3px;
+	width: 20px;
+	height: 20px;
+	background: #fff;
+	border-radius: 90px;
+	transition: 0.3s;
+}
+
+input:checked + label {
+	background: var(--color-headings);
+}
+
+input:checked + label:after {
+	left: calc(100% - 5px);
+	transform: translateX(-100%);
+}
+
+label:active:after {
+	width: 45px;
+}
+
+html.transition,
+html.transition *,
+html.transition *:before,
+html.transition *:after {
+  transition: all 750ms !important;
+  transition-delay: 0 !important;
+}
+
+
+
+
+body {
+  padding: 0;
+  margin: 0;
+  scroll-behavior: smooth;
+  background-color: var(--body-color);
+  font-family: 'Montserrat', sans-serif;
+}
+
+* {transition: 0.3s ease-in-out; font-family: "Montserrat", serif;}
+button:focus {outline: none;}
+input:focus {outline: none;}
+textarea:focus {outline: none;}
+ul, li {padding: 0;margin: 0;list-style: none;}
+
+::-webkit-scrollbar {background: rgba(255, 255, 255, 1); width: 7px;, height: 2px;}
+::-webkit-scrollbar-thumb {background: #999999; border-radius: 0px;}
+::-webkit-scrollbar-track-piece {background: transparent;}
+
+#main-block {
+	margin-left: auto;
+	margin-right: auto;
+	background: transparent;
+	text-align: center;
+	border: 0px solid transparent;
+	width: 100%;
+}
+
+#main-header-block {
+	width: 100%;
+	height: 80px;
+	background-color:  var(--body-color);
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	font-size: 30px;
+}
+
+#main-header-block > div {
+	flex-grow: 1;
+	padding: 20px;
+	background-color:  var(--body-color);
+	font-size: 30px;
+}
+
+#main-header-block > div:nth-of-type(1) {text-align: left;}
+#main-header-block > div:nth-of-type(2) {text-align: right;}
+#main-header-block > div:nth-of-type(1) > div {
+	font-size: 20pt;
+	letter-spacing: 1.5px;
+	font-weight: bold;
+	user-select: none;
+	padding: 4px;
+}
+#main-header-block > div:nth-of-type(1) > div > a {text-decoration: none; color: var(--main-blue);}
+#main-header-block > div:nth-of-type(1):visited {color: var(--main-blue);}
+#main-header-block > div:nth-of-type(1):active {color: var(--main-blue);}
+
+#main-search-input {
+	border: none;
+	background-color:  var(--trans-color);
+	color: #ACACAF;
+	padding: 6px;
+	width: 90%;
+	height: 35px;
+	font-size: 14pt;
+	letter-spacing: -0.5px;
+	border: 0px solid var(--color-headings);
+	border-bottom: 0px solid var(--color-headings);
+	border-radius: 30px;
+}
+#main-search-input:focus {
+	border: 3px solid var(--color-headings);
+	border-bottom: 3px solid var(--color-headings);
+	border-radius: 30px;
+}
+
+#main-wallet-block {
+	font-size: 30pt;
+	color: var(--main-blue);
+	width: 70%;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: left;
+	padding: 6px;
+	margin-top: 70px;
+	border: none;
+	box-shadow: none;
+	background-color: var(--body-color);
+	display: none;
+}
+
+#main-wallet-block > div {
+	display: flex;
+	justify-content: flex-start;
+	font-size: 30pt;
+}
+#main-wallet-block > div > span:nth-of-type(1) {
+	width: 120px;
+	letter-spacing: 0.5px;
+	font-weight: bold;
+	user-select: none;
+}
+#main-wallet-block > div > span:nth-of-type(2) {
+	width: 100%;
+	letter-spacing: 0.5px;
+	word-break: break-all;
+}
+#main-wallet-block > div > span {
+	padding: 6px;
+	border: 2px solid transparent;
+}
+
+#main-transactions-block {
+	color: var(--main-blue);
+	width: 100%;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: left;
+	margin-top: 30px;
+	background-color: var(--body-color);
+	display: none;
+	margin-top: -50px;
+}
+
+#main-transactions-block > div {
+	width: 70%;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 20px;
+	background-color: var(--trans-color);
+	word-break: break-all;
+	border-radius: 30px;
+	padding: 10px;
+	font-size: 14pt;
+	margin-top: -10px;
+}
+#main-transactions-block > div > div {padding: 5px; letter-spacing: 1px;}
+#main-transactions-block > div > div:nth-of-type(1) {font-size: 15pt;}
+#main-transactions-block > div > div:nth-of-type(2) > span {font-size: 14pt;}
+
+#no-transactions-block, #error-block {
+	color: #232328;
+	background-color: #ff9090;
+	display: none;
+	margin-top: 40px;
+	font-size: 14pt;
+	font-weight: bold;
+	letter-spacing: 1px;
+	opacity: 70%;
+
+	align-items: center;
+	width: auto;
+	height: auto;
+	border-radius: 30px;
+	margin-left: 10px;
+	margin-right: auto;
+	margin-bottom: 10px;
+	word-break: break-all;
+	padding: 6px;
+}
+
+#hader {
+	align-content: bottom;
+	text-align: bottom;
+}
+
+#lol1 {
+	color: #FF0035;
+	text-decoration:none;
+
+}
+
+#kek {
+	text-decoration:none;
+	font-size: 20pt;	
+	color: var(--main-blue);
+	user-select: none;
+}
+
+#kek44 {
+	text-align: left;
+	font-size: 20pt;	
+	color: var(--main-blue);
+}
+
+#kek444 {
+	text-align: left;
+	font-size: 15pt;	
+	color: var(--main-blue);
+}
+
+#kek1 {
+	text-decoration:none;
+	color: #FF0035;
+	font-size: 16pt;
+}
+
+#kek2 {
+	text-decoration:none;
+	color: #d602fc;
+	font-size: 16pt;
+}
+
+#keke {
+	text-decoration:none;
+	color: var(--main-blue);
+	font-size: 20pt;
+	user-select: none;
+}
+
+.faq {
+	color: #FF0035;
+	text-decoration:none;
+	font-size: 16pt;
+	text-align: center;
+	align-content: center;
+	align-items: center;
+}
+
+#h1t {
+	margin-top: 20px;
+	align-items: center;
+	width: 200px;
+	height: 40px;
+	border-radius: 10px;
+	margin-left: 10px;
+	margin-right: auto;
+	margin-bottom: 10px;
+	background-color: #ffffff;
+	word-break: break-all;
+	padding: 6px;
+	font-size: 12pt;
+}
+#hedar {
+	margin-left: auto;
+    margin-right: auto;
+    width: 6em
+}
+
+.button2 {
+	height: 35px;
+	width: 150px;
+    background-color: #5BC6FA; 
+    color: rgb(255, 255, 255);
+	border-color: none; 
+	border-radius: 30px;
+	border: none;
+}
+
+.button2:hover {
+    background-color: #00aaff;
+    color: rgb(255, 255, 255);
+}
+
+#hr1 {
+	margin-top: 200px;
+	color: #E5F3FA ;
+}
+
+#kek123 {
+	color: #838386;
+	text-decoration: none;
+	font-size: 10px;
+	text-align: center;
+}
+
+.ton {
+	text-decoration: none;
+	text-align: center;
+}
+
+#text123 {
+	white-space: pre;
+	color: var(--color-headings);
+	font-weight: bold;
+	font-size: 15pt;
+	
+}
+
+#text321 {
+	white-space: pre;
+	color: var(--color-headings);
+	font-weight: bold;
+	font-size: 15pt;
+}
+
+.logo-line {
+	margin-left: 20px;
+	display: inline-block;
+	display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+#imglogo {
+	margin-right: 10px;
+}
+
+#logotext {
+	margin-top: 5px;
+}
+
+.podmenu {
+	margin-top: 10px;
+	text-decoration: none;
+	margin-left: 45px;
+	text-align: left;
+	opacity: 50%;
+	font-size: 10px;
+
+}
+
+#podtext {
+	margin-left: 30px;
+}
+
+.wex {
+	display: inline-block;
+	display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+
+	margin-top: 100px;
+	text-align: left;
+	margin-left: 20px;
+
+}
+
+#wex1 {
+	text-align: center;
+	margin-left: 10px;
+	margin-top: 5px;
+	font-size: 15pt;
+	font-weight: bold;
+}
+
+.price {
+	margin-top: 10px;
+	text-align: left;
+	margin-left: 20px;
+
+	background-color: var(--trans-color);
+	word-break: break-all;
+	border-radius: 10px;
+	padding: 6px;
+	margin-right: 150px;
+}
+
+#wex2 {
+	opacity: 50%;
+
+}
+
+#wex-ton {
+	margin-left: 10px;
+	font-weight: bold;
+}
+
+@import "_my-chartist-settings.scss";
+@import "chartist/dist/scss/chartist.scss";
+
+.ct-chart ct-perfect-fourth {
+	margin-left: 20px;
+	width: 100%;
+	height: 400px;
+	stroke: rgb(0, 255, 8);
+	stroke-width: 5px;
+}
+
+
+.menu-btn {
+	margin-top: 11px;
+	margin-left: 10px;
+	width: 30px;
+	height: 20px;
+	position: relative;
+	z-index:6;
+	overflow: hidden;
+}
+
+.menu-btn span {
+	width: 40px;
+	height: 3px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	background-color: var(--main-blue);
+	transition: all 0.5s;
+}
+
+.menu-btn span:nth-of-type(2) {
+	top: calc(50% - 5px);
+}
+.menu-btn span:nth-of-type(3) {
+	top: calc(50% + 5px);
+}
+
+/* Меняем гамбургер иконку, когда меню открыто */
+.menu-btn.active span:nth-of-type(1) {
+  display: none;
+}
+.menu-btn.active span:nth-of-type(2) {
+  top: 50%;
+  transform: translate(-50%, 0%) rotate(50deg);  
+}
+.menu-btn.active span:nth-of-type(3) {
+  top: 50%;
+  transform: translate(-50%, 0%) rotate(-50deg); 
+}
+
+/* Меню, которое будет появляться */
+.menu {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	padding: 15px;
+  background: var(--body-color);
+	transform: translateX(-100%);
+	transition: transform 0.5s; 
+}
+
+.menu.active {
+	transform: translateX(0);
+}
+
+.menu li {
+	list-style-type: none;
+	text-decoration: none;
+}
+
+.menu a {
+	font-weight: bold;
+	margin-top: 30px;
+	margin: 10px;
+	text-decoration: none;
+	color: var(--main-blue);
+	font-size: 15pt;
+
+	/* background-color: var(--trans-color);
+	word-break: break-all;
+	border-radius: 10px;
+	padding: 10px; */
+}
+
+#textmenu {
+	margin-top: 30px;
+}
+
+#wallet-balance {
+	margin-top: -10px;
+	white-space: nowrap;
+	font-size: 20px;
+	text-align: center;
+}
+
+.mainstr {
+	text-align: center;
+}
+
+#wallet-balance-usd {
+	margin-top: -15px;
+	white-space: nowrap;
+	font-size: 15px;
+	text-align: center;
+	justify-content: center;
+	color: var(--box-shadow);
+}
+
+#wallet-log {
+	margin-top: -2px;
+}
+
+#h5 {
+	margin-top: 30px;
+}
+
+#wallet-address {
+	font-size: 0.001px;
+}
+
+h5 {
+	font-size: 20px;
+}
+
+#h5 {
+	margin-left: 5px;
+	font-size: 30px;
+}
+
+#wallet-log {
+	margin-left: 5px;
+	font-size: 30px;
+}
+
+#state-text {
+	font-size: 20px;
+	margin-left: 9px;
+	margin-top: -20px;
+}
+
+#wallet-state {
+	margin-top: -15px;
+	white-space: nowrap;
+	font-size: 18px;
+	text-align: center;
+	justify-content: center;
+	color: var(--box-shadow);
+	margin-left: -15px;
+}
